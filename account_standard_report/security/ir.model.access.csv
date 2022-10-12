@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_report_template,access.account.report.template,model_account_report_template,account.group_account_user,1,1,1,1
+access_account_report_standard_ledger_periode,access.account.report.standard.ledger.periode,model_account_report_standard_ledger_periode,account.group_account_user,1,1,1,1
+access_account_report_standard_ledger_report,access.account.report.standard.ledger.report,model_account_report_standard_ledger_report,account.group_account_user,1,1,1,1
+access_account_report_standard_ledger_line,access.account.report.standard.ledger.line,model_account_report_standard_ledger_line,account.group_account_user,1,1,1,1
+access_account_report_standard_ledger_report_object,access.account.report.standard.ledger.report.object,model_account_report_standard_ledger_report_object,account.group_account_user,1,1,1,1
+access_account_report_standard_ledger,access.account.report.standard.ledger,model_account_report_standard_ledger,account.group_account_user,1,1,1,1

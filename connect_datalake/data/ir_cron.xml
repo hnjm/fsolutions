@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ir_cron_cron_fetch_datalake_partner" model="ir.cron">
+        <field name="name">Data Lake: Fetch Customers Data</field>
+        <field name="model_id" ref="sale.model_res_partner"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="active" eval="True"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_fetch_datalake_partner()</field>
+    </record>
+
+<!--        <record id="ir_cron_cron_fetch_datalake_product" model="ir.cron">-->
+<!--        <field name="name">Data Lake: Fetch Products Data</field>-->
+<!--        <field name="model_id" ref="sale.model_product_template"/>-->
+<!--        <field name="user_id" ref="base.user_root"/>-->
+<!--        <field name="interval_number">1</field>-->
+<!--        <field name="interval_type">days</field>-->
+<!--        <field name="numbercall">-1</field>-->
+<!--        <field name="doall" eval="False"/>-->
+<!--        <field name="active" eval="True"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">model._cron_fetch_datalake_product()</field>-->
+<!--    </record>-->
+
+    <record id="ir_cron_fetch_datalake_order" model="ir.cron">
+        <field name="name">Data Lake: Fetch Order Data</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="active" eval="True"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_fetch_datalake_order()</field>
+    </record>
+
+</odoo>

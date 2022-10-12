@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Stock Picking Inherit Form View to Modify it -->
+        <record id="view_picking_form_inherit_effective_date" model="ir.ui.view">
+            <field name="name">view.picking.form.inherit.effective</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_done']"
+                       position="replace">
+                    <field name="effective_date" string="Effective Date" required="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock_valuation_layer_tree" model="ir.ui.view">
+            <field name="name">stock.valuation.layer.inherit.effective</field>
+            <field name="model">stock.valuation.layer</field>
+            <field name="inherit_id" ref="stock_account.stock_valuation_layer_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='create_date']"
+                       position="replace">
+                    <field name="move_date" string="Effective Date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="revalidate_subcontracting_action" model="ir.actions.server">
+            <field name="name">Revalidate Subcontracting</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_revalidate()
+            </field>
+        </record>
+    </data>
+</odoo>

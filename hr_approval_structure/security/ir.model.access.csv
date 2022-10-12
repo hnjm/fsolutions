@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_authorization_approval_template,access.hr.authorization.approval.template,model_hr_authorization_approval_template,base.group_user,1,1,1,1
+access_hr_authorization_approval_template_line,access.hr.authorization.approval.template.line,model_hr_authorization_approval_template_line,base.group_user,1,1,1,1
+access_hr_authorization_approval,access.hr.authorization.approval,model_hr_authorization_approval,base.group_user,1,1,1,1
+access_hr_authorization_approval_line,access.hr.authorization.approval.line,model_hr_authorization_approval_line,base.group_user,1,1,1,1
+
+

@@ -1,0 +1,1 @@
+from . import stagnant_products_report_wizard

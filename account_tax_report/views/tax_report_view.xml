@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_line_tax_report_tree" model="ir.ui.view">
+        <field name="name">account.move.line.tree</field>
+        <field name="model">account.move.line</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Journal Items" create="false" edit="false" sample="1">
+                <field name="date" string="التاريخ"/>
+                <field name="move_id" string="رقم الفاتورة"/>
+                <field name="ref" string="مرجع الفاتورة"/>
+                <field name="tax_base_amount_per_type" string="قيمة الفاتورة" sum="Total"/>
+                <field name="tax_line_id" string="نسبة الضريبة"/>
+                <field name="tax_amount" string="قيمة الضريبة"
+                       sum="Total Amount"/>
+                <field name="amount_after_tax" string="الاجمالي بعد الضريبة" sum="Total Amount"/>
+                <field name="partner_id" string="اسم العميل"/>
+                <field name="partner_vat" string="الرقم الضريبي للعميل"/>
+                <field name="analytic_account_id" string="الحساب التحليلي"
+                       attrs="{'readonly':[('parent_state','=','posted')]}"/>
+                <field name="analytic_tag_ids" widget="many2many_tags" string="الوسم التحليلي"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="journal_id" options='{"no_open":True}' optional="hide" string="الدفتر"/>
+                <field name="account_id" optional="hide" groups="account.group_account_readonly" string="الحساب"/>
+                <field name="statement_id" invisible="1"/>
+                <field name="currency_id" readonly="1" invisible="1"/>
+                <field name="company_currency_id" invisible="1"/>
+                <field name="parent_state" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_account_moves_tax" model="ir.actions.act_window">
+        <field name="context">{'journal_type':'general','search_default_groupby_date': 1,
+            'search_default_posted':1}
+        </field>
+        <field name="name">Tax Details Report</field>
+        <field name="res_model">account.move.line</field>
+        <field name="domain">[('tax_line_id', '!=', False)]</field>
+        <field name="view_id" ref="view_move_line_tax_report_tree"/>
+        <field name="search_view_id" ref="account.view_account_move_line_filter_with_root_selection"/>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+
+    <menuitem id="menu_action_account_moves_tax_report" action="action_account_moves_tax"
+              parent="account.account_reports_management_menu"
+              groups="account.group_account_readonly" sequence="80"/>
+
+</odoo>

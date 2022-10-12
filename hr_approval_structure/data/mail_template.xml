@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="mail_template_hr_authorization_approval_line_waiting"
+                model="mail.template">
+            <field name="name">
+                Authorization Approval: Waiting Notification
+            </field>
+            <field name="subject">
+                {{ ctx['mail_subject'] }}
+            </field>
+            <field name="email_to">
+                {{ ctx['mail_to'] }}
+            </field>
+            <field name="email_cc">{{ ctx['mail_cc'] }}
+            </field>
+            <field name="model_id"
+                   ref="hr_approval_structure.model_hr_authorization_approval_line"/>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear <t t-out="ctx['line'].name or ''"></t>,
+                    </p>
+                    <br/>
+                    <p>This is request <t t-out="ctx['record'].name or ''"></t> that requires your
+                        approval.
+                    </p>
+                    <br/>
+                    <p>
+                        <em style="text-decoration: underline;">
+                            Disclaimer: Please do not reply to this mailbox;
+                            emails are not monitored.
+                            Alternatively please submit your issue via
+                        </em>
+                    </p>
+
+                    <p>
+                        Best Regards,
+                        <br/>
+                        <t t-out="ctx['mail_signature'] or ''"></t>
+                    </p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">{{ ctx['record'].user_id.lang }}</field>
+        </record>
+
+        <record id="mail_template_hr_authorization_approval_done"
+                model="mail.template">
+            <field name="name">
+                Authorization Approval: Done Notification
+            </field>
+            <field name="subject">
+                {{ ctx['mail_subject'] }}
+            </field>
+            <field name="email_to">
+                {{ ctx['mail_to'] }}
+            </field>
+            <field name="email_cc">{{ ctx['mail_cc'] }}
+            </field>
+            <field name="model_id"
+                   ref="hr_approval_structure.model_hr_authorization_approval_line"/>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear <t t-out="ctx['line'].name or ''"></t>,
+                    </p>
+                    <br/>
+                    <p>This is request <t t-out="ctx['record'].name or ''"></t> is done.
+                    </p>
+                    <br/>
+                    <p>
+                        <em style="text-decoration: underline;">
+                            Disclaimer: Please do not reply to this mailbox;
+                            emails are not monitored.
+                            Alternatively please submit your issue via
+                        </em>
+                    </p>
+
+                    <p>
+                        Best Regards,
+                        <br/>
+                        <t t-out="ctx['mail_signature'] or ''"></t>
+                    </p>
+                </div>
+            </field>
+            <field name="lang">{{ ctx['record'].user_id.lang }}</field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+        <record id="hr_authorization_approval_template_view_form"
+                model="ir.ui.view">
+            <field name="name">hr.authorization.approval.template.view.form</field>
+            <field name="model">hr.authorization.approval.template</field>
+            <field name="arch" type="xml">
+                <form string="Approval Template">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" string="Name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="res_model_id"/>
+                            <field name="active" invisible="1"/>
+                            <field name="user_id"/>
+                        </group>
+                        <field name="line_ids"
+                               context="{'default_template_id': id}">
+                            <tree>
+                                <field name="name"/>
+                                <field name="sequence"/>
+                                <field name="required"/>
+                                <field name="user_ids" widget="many2many_tags"/>
+                                 <field name="current_user"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="sequence"/>
+                                        <field name="required"/>
+                                        <field name="domain"/>
+                                    </group>
+                                    <group>
+                                        <field name="user_ids" widget="many2many_tags" attrs="{'readonly': [('current_user', '=',True)]}"/>
+                                        <field name="current_user" attrs="{'readonly': [('user_ids', '!=', [])]}"/>
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_authorization_approval_template_view_tree"
+                model="ir.ui.view">
+            <field name="name">hr.authorization.approval.template.view.tree</field>
+            <field name="model">hr.authorization.approval.template</field>
+            <field name="arch" type="xml">
+                <tree string="Approval Templates">
+                    <field name="name"/>
+                    <field name="res_model_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_authorization_approval_template_view_search"
+                model="ir.ui.view">
+            <field name="name">hr.authorization.approval.template.view.search</field>
+            <field name="model">hr.authorization.approval.template</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="res_model_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="hr_authorization_approval_template_action"
+                model="ir.actions.act_window">
+            <field name="name">Approval Templates</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.authorization.approval.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="hr_approval_structure_menu"
+                  name="Approval Structure" web_icon="hr_approval_structure,static/description/icon.png"/>
+        <menuitem id="hr_authorization_approval_template_menu"
+                  name="Approval Mandates"
+                  parent="hr_approval_structure_menu"
+                  action="hr_authorization_approval_template_action"/>
+    </data>
+</odoo>

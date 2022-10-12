@@ -1,0 +1,19 @@
+.font{
+font-family:'traditional_arabic';;font-weight:100;font-size: 13px;
+}
+
+@font-face {
+	font-family: Arial;
+	font-weight: bold;
+	font-style: normal;
+	  }
+
+@font-face {
+	font-family: Arial;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.arabic{
+	font-family:Arial!important;
+}

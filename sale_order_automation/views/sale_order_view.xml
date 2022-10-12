@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_order_form">
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <field name="show_update_pricelist" position="before">
+                    <field name="sale_date" string="Actual Date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="multi_confirm_order_action" model="ir.actions.server">
+            <field name="name">Confirm Order</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_multi_confirm()
+            </field>
+        </record>
+
+    </data>
+</odoo>

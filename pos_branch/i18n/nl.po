@@ -1,0 +1,174 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_branch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-06 07:39+0000\n"
+"PO-Revision-Date: 2022-01-06 07:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__address
+msgid "Address"
+msgstr "Adres"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_users__branch_ids
+#: model_terms:ir.ui.view,arch_db:pos_branch.view_user_form_extended
+msgid "Allowed Branches"
+msgstr "Toegestane takken"
+
+#. module: pos_branch
+#: model_terms:ir.ui.view,arch_db:pos_branch.inherit_view_pos_branch_config_form
+msgid "Allowed POS Branch"
+msgstr "Toegestane POS-vestiging"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Bankafschrift"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Bankafschriftregel"
+
+#. module: pos_branch
+#: model:ir.actions.act_window,name:pos_branch.action_res_branch_form
+#: model:ir.model.fields,field_description:pos_branch.field_account_bank_statement__branch_id
+#: model:ir.model.fields,field_description:pos_branch.field_account_bank_statement_line__branch_id
+#: model:ir.model.fields,field_description:pos_branch.field_pos_config__branch_id
+#: model:ir.model.fields,field_description:pos_branch.field_pos_order__branch_id
+#: model:ir.model.fields,field_description:pos_branch.field_pos_payment__branch_id
+#: model:ir.model.fields,field_description:pos_branch.field_pos_session__branch_id
+#: model:ir.module.category,name:pos_branch.module_branch_management
+#: model:ir.ui.menu,name:pos_branch.menu_action_res_branch
+#: model_terms:ir.ui.view,arch_db:pos_branch.pos_sale_order_branch_field
+msgid "Branch"
+msgstr "Tak"
+
+#. module: pos_branch
+#: model_terms:ir.ui.view,arch_db:pos_branch.view_res_branch_form
+#: model_terms:ir.ui.view,arch_db:pos_branch.view_res_branch_tree
+msgid "Branch Information"
+msgstr "Filiaal informatie"
+
+#. module: pos_branch
+#. openerp-web
+#: code:addons/pos_branch/static/src/xml/pos.xml:0
+#, python-format
+msgid "Branch:"
+msgstr "Tak:"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_users__branch_id
+msgid "Current Branch"
+msgstr "Huidige vestiging"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__id
+msgid "ID"
+msgstr "ID kaart"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_users__is_branch_user
+msgid "Is branch user"
+msgstr "Is filiaalgebruiker"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch____last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__write_date
+msgid "Last Updated on"
+msgstr "Laatst geupdate op"
+
+#. module: pos_branch
+#: model:res.groups,name:pos_branch.group_branch_user_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: pos_branch
+#: model:res.groups,name:pos_branch.group_no_branch_user
+msgid "Non branch User"
+msgstr "Niet-filiaalgebruiker"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuratie van verkooppunt"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Verkooppunt bestellingen"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_pos_payment
+msgid "Point of Sale Payments"
+msgstr "Point of Sale-betalingen"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Verkooppunt Sessie"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_res_branch
+msgid "Res Branch"
+msgstr "Onderzoekstak"
+
+#. module: pos_branch
+#: model:ir.model.fields,field_description:pos_branch.field_res_branch__telephone_no
+msgid "Telephone No"
+msgstr "Telefoon Nee"
+
+#. module: pos_branch
+#: model:res.groups,name:pos_branch.group_branch_user
+msgid "User"
+msgstr "Gebruiker"
+
+#. module: pos_branch
+#: model:ir.model,name:pos_branch.model_res_users
+msgid "Users"
+msgstr "Gebruikers"

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+	<div t-name="ReportPreviewDialog" class="modal fade" t-att-id="_.uniqueId('modal_')" tabindex="-1" data-backdrop="static" role="dialog" aria-hidden="true">
+	    <div class="modal-dialog modal-lg">
+	        <div class="modal-content">
+	            <header class="modal-header">
+                    <h4 class="col-11 modal-title">
+                        <t t-raw="widget.title"/>
+                    </h4>
+                    <button type="button" style="margin-left: 27px; margin-top: -1px;" class="preview-resize-btn preview-maximize">
+	                	<i class="fa fa-square-o"></i>
+	                </button>
+	                <button type="button" style="margin-left: 53px; margin-top: -1px;" class="preview-resize-btn preview-minimize">
+	                	<i class="fa fa-clone"></i>
+	                </button>
+                    <button type="button" class="close preview-destroy" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </header>
+	            <main class="modal-body preview-body">
+					<div class="preview_pdf_iframe_container">
+						<iframe 
+							allowfullscreen="allowfullscreen"  
+							webkitallowfullscreen="webkitallowfullscreen" 
+							t-att-src="widget.url" 
+							class="o_preview_pdf_iframe"/>
+					</div>
+				</main>
+	            <footer class="modal-footer">
+                    <button type="button" class="btn btn-primary preview-destroy" data-dismiss="modal">
+						Close
+					</button>
+                </footer>
+	        </div>
+	    </div>
+	</div>
+</templates>

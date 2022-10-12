@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_external_layout_standard" inherit_id="web.external_layout_standard">
+        <xpath expr="//img[@t-if='company.logo']" position="replace">
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-left" alt="Logo" style="width: 140px; height=140px;"/>
+        </xpath>
+    </template>
+
+    <template id="custom_external_layout_striped" inherit_id="web.external_layout_striped">
+         <xpath expr="//img[@t-if='company.logo']" position="replace">
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-left" alt="Logo" style="width: 140px; height=140px;"/>
+        </xpath>
+    </template>
+
+    <template id="custom_external_layout_boxed" inherit_id="web.external_layout_boxed">
+         <xpath expr="//img[@t-if='company.logo']" position="replace">
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-left" alt="Logo" style="width: 140px; height=140px;"/>
+        </xpath>
+    </template>
+
+    <template id="custom_external_layout_bold" inherit_id="web.external_layout_bold">
+        <xpath expr="//img[@t-if='company.logo']" position="replace">
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-left" alt="Logo" style="width: 140px; height=140px;"/>
+        </xpath>
+    </template>
+</odoo>

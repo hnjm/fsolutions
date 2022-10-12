@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_statements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-26 09:54+0000\n"
+"PO-Revision-Date: 2022-04-26 09:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_statements
+#: code:addons/product_statements/wizard/stagnant_products_report_wizard.py:0
+#, python-format
+msgid "\"Date To\" time cannot be earlier than \"Date From\" time."
+msgstr ""
+
+#. module: product_statements
+#: code:addons/product_statements/wizard/stagnant_products_report_wizard.py:0
+#, python-format
+msgid "\"Please insert Date from and Date to"
+msgstr ""
+
+#. module: product_statements
+#: model_terms:ir.ui.view,arch_db:product_statements.stagnant_products_report_wizard_view
+msgid "Cancel"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__categ_ids
+msgid "Categ"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__excel_sheet
+msgid "Excel Sheet"
+msgstr ""
+
+#. module: product_statements
+#: model_terms:ir.ui.view,arch_db:product_statements.stagnant_products_report_wizard_view
+msgid "Export"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model,name:product_statements.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: product_statements
+#: model_terms:ir.ui.view,arch_db:product_statements.product_financial_movements_report_view
+msgid "Original Currency"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_account_move_line__categ_id
+msgid "Product Category"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.actions.act_window,name:product_statements.action_product_financial_movements_report
+#: model:ir.ui.menu,name:product_statements.menu_product_financial_movements_report
+#: model_terms:ir.ui.view,arch_db:product_statements.product_financial_movements_report_view
+msgid "Product Financial Movements"
+msgstr "تقرير الحركة مالية للاصناف"
+
+#. module: product_statements
+#: model:ir.model.fields,field_description:product_statements.field_stagnant_products_report_wizard__sale_qty
+msgid "Sale Qty"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model.fields,help:product_statements.field_account_move_line__categ_id
+msgid "Select category for the current product"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.actions.act_window,name:product_statements.action_stagnant_products_report_wizard
+#: model:ir.ui.menu,name:product_statements.menu_stagnant_products_report_wizard
+msgid "Stagnant Products Report"
+msgstr "تقرير الاصناف الراكدة"
+
+#. module: product_statements
+#: model_terms:ir.ui.view,arch_db:product_statements.stagnant_products_report_wizard_view
+msgid "or"
+msgstr ""
+
+#. module: product_statements
+#: model:ir.model,name:product_statements.model_stagnant_products_report_wizard
+msgid "stagnant.products.report.wizard"
+msgstr ""

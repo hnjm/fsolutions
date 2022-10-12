@@ -1,0 +1,140 @@
+<odoo>
+    <template id="tax_invoice_report_document" inherit_id="print_invoice_ksa.tax_invoice_report_document">
+        <xpath expr="//table[@id='totals']/thead/tr[2]" position="after">
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    الخصم
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.discount_amount"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Discount</span>
+                </td>
+            </tr>
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    تكلفة الشحن
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.shipping_cost"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Shipping Cost</span>
+                </td>
+            </tr>
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    عمولة الدفع عند الاستلام
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.payment_fees"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Payment Fees</span>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+    <template id="tax_project_invoice_document" inherit_id="print_invoice_ksa.tax_project_invoice_document">
+        <xpath expr="//table[@id='totals']/thead/tr[2]" position="after">
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    الخصم
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.discount_amount"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Discount</span>
+                </td>
+            </tr>
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    تكلفة الشحن
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.shipping_cost"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Shipping Cost</span>
+                </td>
+            </tr>
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    عمولة الدفع عند الاستلام
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.payment_fees"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Payment Fees</span>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+    <template id="tax_simplified_invoice_document" inherit_id="print_invoice_ksa.tax_simplified_invoice_document">
+        <xpath expr="//table[@id='totals']/thead/tr[2]" position="after">
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    الخصم
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.discount_amount"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Discount</span>
+                </td>
+            </tr>
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    تكلفة الشحن
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.shipping_cost"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Shipping Cost</span>
+                </td>
+            </tr>
+            <tr style="background-color:#FED2AA;">
+                <td class="arabic"
+                    style="font-weight: bold;border:1pt solid grey;text-align:right;padding:3pt">
+                    عمولة الدفع عند الاستلام
+                </td>
+                <td style="border:1pt solid grey;text-align:right;padding:3pt"
+                    class="text-right">
+                    <span t-field="o.payment_fees"
+                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+                <td style="border:1pt solid grey;font-weight: bold;text-align:left;padding:3pt">
+                    <span>Payment Fees</span>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>

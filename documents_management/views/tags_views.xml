@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<odoo>
+    <data> 
+        <record id="tag_view_form" model="ir.ui.view">
+        <field name="name">tag form view</field>
+            <field name="model">documents.tag</field>
+            <field name="arch" type="xml">
+            <form>
+                    <sheet>
+                        <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="category_id"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    <record id="tag_view_search" model="ir.ui.view">
+        <field name="name">tag search</field>
+            <field name="model">documents.tag</field>
+        <field name="arch" type="xml">
+        <search>
+            <field name="name" string="Tag"/>
+            <field name="category_id"/>
+         </search>
+        </field>
+    </record>
+
+    <record id="tag_view_tree" model="ir.ui.view">
+        <field name="name">tag tree</field>
+        <field name="model">documents.tag</field>
+            <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name" placeholder="Create a tag"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="category_view_search" model="ir.ui.view">
+            <field name="name">category search</field>
+            <field name="model">documents.tag.category</field>
+            <field name="arch" type="xml">
+            <search>
+                    <field name="name"/>
+                <field name="tag_ids"/>
+                <field name="folder_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="category_view_tree" model="ir.ui.view">
+            <field name="name">tag categories tree</field>
+            <field name="model">documents.tag.category</field>
+            <field name="arch" type="xml">
+                <tree default_order="sequence">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="folder_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="category_view_form_list" model="ir.ui.view">
+            <field name="name">documents category form view</field>
+            <field name="model">documents.tag.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="E.g. Status"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="folder_id" required="1"/>
+                                <field name="tooltip"/>
+                            </group>
+                            <group>
+                                <field name="tag_ids"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="category_view_tree" model="ir.ui.view">
+            <field name="name">tag categories tree</field>
+            <field name="model">documents.tag.category</field>
+            <field name="arch" type="xml">
+                <tree default_order="sequence">
+                    <field name="name"/>
+                    <field name="folder_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="category_view_form" model="ir.ui.view">
+            <field name="name">documents category form view</field>
+            <field name="model">documents.tag.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="tooltip"/>
+                        </group>
+                        <group>
+                            <field name="tag_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_documents_tags">
+        <field name="name">Manage tag categories</field>
+        <field name="res_model">documents.tag.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('documents_management.category_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('documents_management.category_view_form_list')})]"/>
+        </record>
+        
+        <menuitem 
+            name="Tags" 
+            id="menu_tags_root" 
+            parent="documents_management.configuration" 
+            action="action_documents_tags" 
+            groups="documents_management.group_document_user" 
+            sequence="2"/>
+        
+    </data>
+</odoo>

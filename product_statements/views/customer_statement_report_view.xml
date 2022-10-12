@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_financial_movements_report_view" model="ir.ui.view">
+        <field name="name">account.move.line.tree</field>
+        <field name="model">account.move.line</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Product Financial Movements" create="false" sample="1">
+                <field name="product_id" readonly="1"/>
+                <field name="categ_id" readonly="1"/>
+                <field name="date" optional="show" readonly="1"/>
+                <field name="move_id" options="{&quot;no_open&quot;:False}"/>
+                <field name="company_id" invisible="1"/>
+                <field name="journal_id" options="{&quot;no_open&quot;:True}" optional="show" readonly="1"/>
+                 <field name="quantity" readonly="1"/>
+                <field name="purchase_price" readonly="1"/>
+                <field name="price_unit" readonly="1"/>
+                <field name="price_subtotal" readonly="1"/>
+                <field name="partner_id" optional="show" readonly="1"/>
+                <field name="currency_id" readonly="1" groups="base.group_multi_currency" optional="hide"
+                       string="Original Currency"/>
+                <field name="company_currency_id" invisible="1" />
+                <field name="parent_state" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_product_financial_movements_report" model="ir.actions.act_window">
+        <field name="name">Product Financial Movements</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_id" ref="product_financial_movements_report_view"/>
+        <field name="search_view_id" ref="account.view_account_move_line_filter"/>
+        <field name="view_mode">tree,pivot</field>
+        <field name="domain">[('parent_state','=','posted'),('product_id','!=',False),('move_id.move_type','!=','entry'),('account_id', '!=', False),('exclude_from_invoice_tab', '=', False)]</field>
+    </record>
+
+    <menuitem id="menu_product_financial_movements_report" action="action_product_financial_movements_report"
+              parent="stock.menu_warehouse_report" sequence="50"/>
+
+</odoo>

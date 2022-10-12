@@ -1,0 +1,31 @@
+<odoo>
+    <record model="ir.ui.view" id="view_account_journal_form_inherit">
+        <field name="name">account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Bank Fees" attrs="{'invisible':[('type', '!=','bank')]}">
+                    <group>
+                        <group>
+                            <field name="have_fees"/>
+                            <field name="fees_percent_account_id"
+                                   attrs="{'invisible':[('have_fees', '=', False)],'required':[('have_fees', '!=', False)]}"/>
+                            <field name="fees_fixed_account_id"
+                                   attrs="{'invisible':[('have_fees', '=', False)],'required':[('have_fees', '!=', False)]}"/>
+                            <field name="tax_id"
+                                   attrs="{'invisible':[('have_fees', '=', False)],'required':[('have_fees', '!=', False)]}"/>
+                            <field name="tax_account_id"
+                                   attrs="{'invisible':[('have_fees', '=', False)],'required':[('have_fees', '!=', False)]}"/>
+                            <field name="fees_percent" digits="[16,4]"
+                                   attrs="{'invisible':[('have_fees', '=', False)]}"/>
+                            <field name="fees_amount" digits="[16,4]"
+                                   attrs="{'invisible':[('have_fees', '=', False)]}"/>
+                        </group>
+                    </group>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

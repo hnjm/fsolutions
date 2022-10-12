@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_attachment_form_documents" model="ir.ui.view">
+        <field name="name">Ir attachment.form</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="arch" type="xml">            
+            <xpath expr="//form/sheet" position="before">
+                <header>
+                    <button string="Send by Email" name="action_attachment_send" type="object" class="oe_highlight"/>
+                </header>
+            </xpath>
+            <xpath expr="//form/sheet/h1" position="after">
+                <h3 attrs="{'invisible': [('code', '=', 'New')]}"><field name="code"/></h3>
+                <h3 attrs="{'invisible': [('version', '=', '0')]}"><span> version - <field name="version"/></span></h3>
+            </xpath>
+            <xpath expr="//field[@name='mimetype']" position="after">
+                <field name="access_token" invisible="1"/>
+                <field name="folder_id"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags"/>                
+            </xpath>
+            <xpath expr="//sheet" position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="before">
+                <field name="partner_id"/>
+            </xpath>
+        </field>
+    </record>
+        
+    <record id="view_attachment_tree_documents" model="ir.ui.view">
+        <field name="name">Ir attachment.tree</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="folder_id"/>
+                <field name="version"/>                
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_document_file_kanban_documents" model="ir.ui.view">
+        <field name="name">Ir attachment.kanban</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="mail.view_document_file_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates//div[hasclass('o_kanban_record_title')]" position="after">
+                <div class="o_kanban_record_version">
+                    <span>Vesrion - <field name="version"/></span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+        
+    <record id="view_attachment_search_documents" model="ir.ui.view">
+        <field name="name">Ir attachment.search</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="folder_id"/>                
+            </xpath>
+            <xpath expr="//group" position="after">
+                <searchpanel>
+                    <field name="folder_id"/>
+                    <field name="tag_ids" select="multi" groupby="folder_id" icon="fa-tag" enable_counters="1"/>                    
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

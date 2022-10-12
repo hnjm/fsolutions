@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_pos_session_report_form_inherit" model="ir.ui.view">
+        <field name="name">pos.session.report.form.view.inherit</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='iface_invoicing']" position="after">
+                <div class="col-xs-12 col-md-6 o_setting_box" >
+                    <div class="o_setting_left_pane">
+                        <field name="do_session_report"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="do_session_report"/>
+                        <div class="text-muted">
+                            Allow to Print Session Report from POS front-screen Directly.
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

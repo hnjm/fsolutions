@@ -1,0 +1,26 @@
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<odoo>
+    <record id="pos_config_view_form_inherit" model="ir.ui.view">
+        <field name="name">pos.config.form</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='iface_invoicing']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box wk_pos_invoice_offline" attrs="{'invisible': [('module_account', '=', False)]}">
+                    <div class="o_setting_left_pane">
+                        <field name="invoice_print"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="invoice_print"/>
+                        <div class="text-muted">
+                            Allows to Print Invoice Without Download . Disable to download invoice.
+                        </div>
+                    </div>
+                </div>
+               
+            </xpath>
+        </field>
+    </record>
+</odoo>

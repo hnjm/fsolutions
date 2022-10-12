@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='integration']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box" id="datalake_api">
+                    <div class="o_setting_left_pane">
+                        <field name="datalake_api"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label string="Data Lake Connector" for="datalake_api"/>
+                        <div class="content-group" attrs="{'invisible': [('datalake_api','=',False)]}">
+                            <div class="row mt8">
+                                <label for="datalake_url" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_url"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="datalake_order_api" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_order_api"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="datalake_customer_api" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_customer_api"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="datalake_username" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_username"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="datalake_password" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_password"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="datalake_token" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_token"/>
+                            </div>
+                             <div class="row mt8">
+                                <label for="datalake_warehouse_id" class="col-lg-4 o_light_label"/>
+                                <field name="datalake_warehouse_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

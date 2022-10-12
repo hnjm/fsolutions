@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+        <record id="view_export_invoice_pdf_zip_form_wizard" model="ir.ui.view">
+            <field name="name">ir.attachment.export.form.view</field>
+            <field name="model">ir.attachment.export</field>
+            <field name="arch" type="xml">
+                <form string="Invoices"> 
+                    <group>
+                        <field name="name" readonly="True"/>
+                    </group>                   
+                    <footer>
+                        <button name="action_export_zip" string="Export Attachments in Zip" type="object" class="oe_highlight" />
+                        <button string="Cancel" special="cancel" />
+				    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_export_invoice_pdf_zip" model="ir.actions.act_window">
+            <field name="name">Export Attachments in Zip</field>
+            <field name="res_model">ir.attachment.export</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_export_invoice_pdf_zip_form_wizard"/>
+            <field name="target">new</field>
+             <field name="binding_model_id" ref="base.model_ir_attachment" />
+            <field name="binding_view_types">list</field>
+        </record>
+
+</odoo>

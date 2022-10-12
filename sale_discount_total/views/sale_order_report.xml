@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_saleorder_customized" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//thead/tr/th[@name='th_description']" position="before">
+                <th class="text-left">Equipment Name</th>
+            </xpath>
+            <xpath expr="//tbody/t/tr/t/td[@name='td_name']" position="before">
+                <td>
+                    <span t-field="line.product_id"/>
+                </td>
+            </xpath>
+            <xpath expr="//thead/tr/th[@name='th_priceunit']" position="after">
+                <th class="text-left">Installation (%)</th>
+            </xpath>
+            <xpath expr="//tbody/t/tr/t/td[@name='td_priceunit']" position="after">
+                <td class="text-right">
+                    <span t-field="line.installation_percent"/>
+                </td>
+            </xpath>
+            <xpath expr="//thead/tr/th[@name='th_quantity']" position="after">
+                <th class="text-left">Delivered</th>
+            </xpath>
+            <xpath expr="//tbody/t/tr/t/td[@name='td_quantity']" position="after">
+                <td class="text-right">
+                    <span t-field="line.qty_delivered"/>
+                    <span t-field="line.product_uom"/>
+                </td>
+            </xpath>
+            <xpath expr="//span[@t-field='line.discount']" position="replace">
+                <span t-esc="'%.2f'%(line.discount)"/>
+            </xpath>
+            <xpath expr="//div[@name='so_total_summary']" position="replace">
+                <div class="clearfix" name="so_total_summary">
+                    <div id="total" class="row" name="total">
+                        <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                            <table class="table table-sm">
+                                <!-- Tax totals -->
+                                <tr>
+                                    <td>Discount</td>
+                                    <td class="text-right">
+                                        <span t-field="doc.amount_discount"
+                                              t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                    </td>
+                                </tr>
+                                <t t-set="tax_totals" t-value="json.loads(doc.tax_totals_json)"/>
+                                <t t-call="account.document_tax_totals"/>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

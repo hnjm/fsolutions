@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="daily_purchase_report_form_view" model="ir.ui.view">
+		<field name="name">daily.purchase.report.form</field>
+		<field name="model">daily.purchase.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Periodic Purchase Report">
+				<group>
+					<group>
+						<field name="from_date"/>
+					</group>
+					<group>
+						<field name="to_date"/>
+					</group>
+				</group>
+				<footer>
+                    <button name="check_report" type="object" string="Print" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_daily_purchase_report" model="ir.actions.act_window">
+        <field name="name">Periodic Purchase Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">daily.purchase.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+    	id="menu_daily_purchase_report"
+    	name="Periodic Purchase Report"
+    	action="action_daily_purchase_report"
+    	parent="purchase.menu_procurement_management"
+    	/>
+</odoo>

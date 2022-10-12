@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="stagnant_products_report_wizard_view">
+            <field name="name">stagnant.products.report.wizard</field>
+            <field name="model">stagnant.products.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1"/>
+                                <field name="categ_ids" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1"/>
+                                <field name="sale_qty"/>
+                                <field name="excel_sheet" invisible="1"/>
+
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="generate_report" type="object"
+                                string="Export" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stagnant_products_report_wizard" model="ir.actions.act_window">
+            <field name="name">Stagnant Products Report</field>
+            <field name="res_model">stagnant.products.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem id="menu_stagnant_products_report_wizard"
+                  action="action_stagnant_products_report_wizard"
+                  parent="account.account_reports_management_menu"
+                  sequence="2"/>
+    </data>
+</odoo>

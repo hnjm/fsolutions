@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record id="group_sale_last_price" model="res.groups">
+            <field name="name">Show sale last price</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
+</odoo>

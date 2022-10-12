@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="daily_purchare_report_id" model="ir.actions.report">
+            <field name="name">Periodic Purchase Report</field>
+            <field name="model">daily.purchase.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">pways_daily_purchase_report.daily_template_id</field>
+            <field name="report_file">pways_daily_purchase_report.daily_template_id</field>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</openerp>

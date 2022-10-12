@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Currency View -->
+        <record id="view_currency" model="ir.ui.view">
+            <field name="name">res.currency.view</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='currency_subunit_label']" position="after">
+                    <field name="arabic_unit_labels"/>
+                    <field name="arabic_unit_label"/>
+                    <field name="arabic_subunit_labels"/>
+                    <field name="arabic_subunit_label"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

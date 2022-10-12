@@ -1,0 +1,146 @@
+<odoo>
+    <report id="payment_cashing_report"
+            string="سند صرف"
+            model="account.payment"
+            report_type="qweb-pdf"
+            name="print_payment_receipt.payment_cashing_document"
+            file="print_payment_receipt.payment_cashing_document"
+            print_report_name="'سند صرف - %s' % (object.name)"
+
+    />
+    <template id="payment_cashing_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="print_payment_receipt.external_layout_receipt">
+                    <div class="page" style="border: 3px solid black;font-size:20px">
+                        <div style="width:100%">
+                            <h2>
+                                <center>
+                                    سند صرف
+                                </center>
+                                <center>
+                                    Payment Voucher
+                                </center>
+                            </h2>
+                            <br/>
+                            <table dir="rtl"
+                                   style="width:100%;padding:10pt;margin-top:10pt;color:black;">
+                                <tr>
+                                    <td style="border:1pt solid grey;font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <span>المبلغ Amount</span>
+                                    </td>
+                                    <td style="border:1pt solid grey;font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <span>رقم السند Voucher No</span>
+                                    </td>
+                                    <td style="border:1pt solid grey;font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <span>تاريخ السند Voucher Date</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1pt solid grey;padding-right:2pt;text-align:right;">
+                                        <span t-field="o.amount"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding-right:2pt;text-align:right;">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding-right:2pt;text-align:right;">
+                                        <span t-field="o.date"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table dir="rtl"
+                                   style="width:100%;margin-top:10pt;color:black;">
+                                <tr>
+                                    <td style="font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <div class="row">
+                                            <div style="padding-right:20px;">
+                                                <span>أصرفو الي</span>
+                                                <span>Pay to</span>
+                                                <span>:</span>
+                                            </div>
+                                            <div>
+                                                <span t-field="o.partner_id"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <div class="row">
+                                            <div style="padding-right:20px;">
+                                                <span>مبلغ وقدره</span>
+                                                <span>The amount of</span>
+                                                <span>:</span>
+                                            </div>
+                                            <div>
+                                                <span t-field="o.amount"/>
+                                                -
+                                                <span t-field="o.num_word_arabic"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <div class="row">
+                                            <div style="padding-right:20px;">
+                                                <span>البنك</span>
+                                                <span>Bank</span>
+                                            </div>
+                                            <div>
+                                                <span>:</span>
+                                                <span t-field="o.partner_bank_id"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold;padding-right:2pt;text-align:right;">
+                                        <div class="row">
+                                            <div style="padding-right:20px;">
+                                                <span>وذلك مقابل</span>
+                                                <span>For</span>
+                                                <span>:</span>
+                                            </div>
+                                            <div>
+                                                <span t-field="o.ref"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table style="width:100%;padding-right:25px;" dir="rtl">
+                                <tr>
+                                    <td style="text-align:right;padding-right:40px;">
+                                        <strong>المستلم</strong>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <strong>أمين الصندوق</strong>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <strong>المدير</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;padding-right:40px;">
+                                        <strong>Receiver</strong>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <strong>Cashier</strong>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <strong>Manager</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

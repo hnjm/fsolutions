@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <template id="external_layout_journal_entry">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <br/>
+                <div style="padding-top:10px;border:1pt solid black;font-family:Arial!important">
+                    <div class="row">
+                        <div class="col-4">
+                            <ul class="list-unstyled">
+                                <strong>
+                                    <li t-if="company.name" style="text-align:right;padding-right:3pt">
+                                        <span t-field="company.name"/>
+                                    </li>
+                                </strong>
+                                <li t-if="company.arabic_street" style="text-align:right;padding-right:3pt">
+                                    <span t-field="company.arabic_street"/>
+                                </li>
+                                <li t-if="company.arabic_city" style="text-align:right;padding-right:3pt">
+                                    <span t-field="company.arabic_city"/>
+                                </li>
+                                <li t-if="company.arabic_state" style="text-align:right;padding-right:3pt">
+                                    <span t-field="company.arabic_state"/>
+                                    -
+                                    <span t-field="company.zip"/>
+                                </li>
+                                <li t-if="company.arabic_country" style="text-align:right;padding-right:3pt">
+                                    <span t-field="company.arabic_country"/>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4">
+                            <center>
+                                <img t-if="company.logo" style="width: 140px; height=140px;"
+                                     t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                            </center>
+                        </div>
+                        <div class="col-4">
+                            <ul class="list-unstyled">
+                                <strong>
+                                    <li t-if="company.arabic_name" style="text-align:left;padding-left:3pt">
+                                        <span t-field="company.arabic_name"/>
+                                    </li>
+                                </strong>
+                                <li t-if="company.street" style="text-align:left;padding-left:3pt">
+                                    <span t-field="company.street"/>
+                                </li>
+                                <li t-if="company.city" style="text-align:left;padding-left:3pt">
+                                    <span t-field="company.city"/>
+                                </li>
+                                <li t-if="company.state_id" style="text-align:left;padding-left:3pt">
+                                    <span t-field="company.state_id"/>
+                                    -
+                                    <span t-field="company.zip"/>
+                                </li>
+                                <li t-if="company.country_id" style="text-align:left;padding-left:3pt">
+                                    <span t-field="company.country_id"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer" style="border-top:1pt solid black;">
+                        <div class="text-center" style="font-size:14px;">
+                            <ul class="list-inline">
+
+                                <li t-if="company.vat" class="list-inline-item"
+                                    style="text-align:right;padding-right:3pt">
+                                    <span class="text-right">الرقم الضريبي</span>
+                                    <span class="text-right">:</span>
+                                </li>
+                                <li t-if="company.vat" class="list-inline-item"
+                                    style="text-align:left;padding-left:3pt">
+                                    <span>TAX ID:</span>
+                                    <span t-field="company.vat"/>
+                                </li>
+                                <li t-if="company.company_registry" class="list-inline-item"
+                                    style="text-align:right;padding-right:3pt">
+                                    <span class="text-right">رقم سجل الشركة</span>
+                                    <span class="text-right">:</span>
+                                </li>
+                                <li t-if="company.company_registry" class="list-inline-item"
+                                    style="text-align:left;padding-left:3pt">
+                                    <span>CR NO:</span>
+                                    <span t-field="company.company_registry"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article o_report_layout_standard">
+                <t t-raw="0"/>
+            </div>
+            <div class="footer o_background_footer">
+                <div class="text-center" style="font-size:14px;">
+                    <ul class="list-inline">
+                        <li t-if="company.phone" class="list-inline-item">
+                            <i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"/>
+                            <span t-field="company.phone"/>
+                        </li>
+                        <li t-if="company.email" class="list-inline-item">
+                            <i class="fa fa-at" role="img" aria-label="Email" title="Email"/>
+                            <span t-field="company.email"/>
+                        </li>
+                        <li t-if="company.website" class="list-inline-item">
+                            <i class="fa fa-globe" role="img" aria-label="Website" title="Website"/>
+                            <span t-field="company.website"/>
+                        </li>
+                        <li t-if="company.bank_accounts" class="list-inline-item">
+                            <i class="fa fa-ban" role="img" aria-label="Accounts" title="Accounts"/>
+                            <span t-field="company.bank_accounts"/>
+                        </li>
+                    </ul>
+                    <div name="pager" t-if="report_type == 'pdf'">
+                        صفحة:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                        <div style="text-align:right;">
+                            <span>تحريرا في:</span>
+                            <span t-esc="time.strftime('%Y-%m-%d')"
+                                  t-options='{"widget": "date"}' style="text-align:right;"/>
+                        </div>
+                    </div>
+                    <div t-field="company.report_footer"/>
+                </div>
+            </div>
+        </template>
+        <template id="journal_entry_template_report_view">
+            <t t-call="bi_print_journal_entries.external_layout_journal_entry">
+                <div class="page" style="font-size:14px;font-family:Arial!important">
+                    <div class="oe_structure"/>
+                    <p align="center" style="margin-top: 0.08in">
+                        <font face="KacstOne">
+                            <font style="font-size: 12pt">
+                                <span lang="hi-IN">
+                                    <b>Journal Entry/قيد يومية</b>
+                                </span>
+                            </font>
+                        </font>
+                    </p>
+                    <div class="row mt32 mb32">
+                        <div class="col-12">
+                            <table class="table-condensed" dir="rtl"
+                                   style="border:1pt solid grey;width:100%;padding:2px;font-size:14px;color:black;">
+                                <tr>
+                                    <td
+                                            style="border:1pt solid grey;text-align:right;font-weight: bold;">
+                                        <span style="padding:3px;">رقم القيد</span>
+                                    </td>
+                                    <td style="border:1pt solid grey;text-align:center;">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;text-align:left;font-weight: bold;">
+                                        <span style="padding:3px;">Number</span>
+                                    </td>
+                                    <td
+                                            style="border:1pt solid grey;text-align:right; font-weight: bold;">
+                                        <span style="padding:3px;">التاريخ</span>
+                                    </td>
+                                    <td style="border:1pt solid grey;text-align:center;">
+                                        <span t-field="o.date"/>
+                                    </td>
+                                    <td
+                                            style="border:1pt solid grey; text-align:left; font-weight: bold;">
+                                        <span style="padding:3px;">Date</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                            style="border:1pt solid grey;text-align:right; font-weight: bold;">
+                                        <span style="padding:3px;">البيان</span>
+                                    </td>
+                                    <td style="border:1pt solid grey;text-align:center;">
+                                        <span t-field="o.ref"/>
+                                    </td>
+                                    <td
+                                            style="border:1pt solid grey;text-align:left; font-weight: bold;">
+
+                                        <span style="padding:3px;">Ref</span>
+                                    </td>
+                                    <td
+                                        style="border:1pt solid grey;text-align:right; font-weight: bold;">
+                                        <span style="padding:3px;">العميل</span>
+                                    </td>
+                                    <td style="border:1pt solid grey;text-align:center;">
+                                        <span t-field="o.line_ids[0].partner_id"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;text-align:left; font-weight: bold;">
+                                        <span style="padding:3px;">Partner</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <table style="padding-top:5px;border:1pt solid grey;width:100%;color:black;" dir="rtl"
+                           class="table-condensed">
+                        <thead>
+                            <tr style="background-color:#CEE5D0;font-weight: bold;">
+                                <th style="border:1pt solid grey;text-align:center;padding:2pt;">Account
+                                    <br/>
+                                    <span>الحساب</span>
+                                </th>
+                                <th style="border:1pt solid grey;text-align:center;padding:2pt;">Label
+                                    <br/>
+                                    <span>البيان</span>
+                                </th>
+                                <th style="border:1pt solid grey;text-align:center;padding:2pt;">Analytic Account
+                                    <br/>
+                                    <span>الحساب التحليلي</span>
+                                </th>
+                                <th style="border:1pt solid grey;text-align:center;padding:2pt;">Analytic Tags
+                                    <br/>
+                                    <span>الوسم</span>
+                                </th>
+                                <th style="border:1pt solid grey;text-align:center;padding:2pt;">Debit
+                                    <br/>
+                                    <span>مدين</span>
+                                </th>
+                                <th style="border:1pt solid grey;text-align:center;padding:2pt;">Credit
+                                    <br/>
+                                    <span>دائن</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="consumed_tbody">
+                            <t t-set="total" t-value="0.0"/>
+                            <t t-set="total1" t-value="0.0"/>
+                            <t t-foreach="o.line_ids" t-as="line">
+                                <tr>
+                                    <td style="border:1pt solid grey;padding:3pt">
+                                        <span t-field="line.account_id"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding:3pt">
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding:3pt">
+                                        <span t-field="line.analytic_account_id"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding:3pt">
+                                        <span t-field="line.analytic_tag_ids"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding:3pt">
+                                        <span t-field="line.debit"/>
+                                    </td>
+                                    <td style="border:1pt solid grey;padding:3pt">
+                                        <span t-field="line.credit"/>
+                                    </td>
+                                </tr>
+                                <t t-set="total" t-value="total + line.debit"/>
+                                <t t-set="total1" t-value="total1 + line.credit"/>
+                            </t>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <strong>Total</strong>
+                                </td>
+                                <td>
+                                    <strong>اجمالي</strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <span>
+                                            <t t-esc="total"/>
+                                        </span>
+                                    </strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <span>
+                                            <t t-esc="total1"/>
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <div style="font-weight: bold;">
+                        <table style="width:100%;" dir="rtl">
+                            <tr>
+                                <td colspan="4" style="text-align:right;">
+                                    <span style="padding-right:100px">المحاسب</span>
+                                </td>
+                                <td colspan="4" style="text-align:right;">
+                                    <span>المدير المالي</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="journal_entry_report_template_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="bi_print_journal_entries.journal_entry_template_report_view" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="approval_next_line_ids" invisible="1"/>
+                <button name="action_approval_next_approve" string="Approve"
+                        class="oe_highlight oe_inline"
+                        attrs="{'invisible': [('approval_next_line_ids', '=', [])]}"
+                        type="object"/>
+                <button name="action_approval_next_reject" string="Reject"
+                        attrs="{'invisible': [('approval_next_line_ids', '=', [])]}"
+                        class="oe_inline" type="object"/>
+            </field>
+            <div name="button_box" position="inside">
+                <field name="approval_template_id" invisible="1"/>
+                <button name="action_open_approvals" type="object"
+                        class="oe_stat_button" icon="fa-lock"
+                        attrs="{'invisible': [('approval_template_id', '=', False)]}"
+                        help="Approval Status: click to open list of approvals.">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="approvals_done"
+                                   widget="statinfo" nolabel="1"/>
+                            /
+                            <field name="approvals_count"
+                                   widget="statinfo" nolabel="1"/>
+                        </span>
+                        <span class="o_stat_text">
+                            <field name="approval_status" nolabel="1"/>
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

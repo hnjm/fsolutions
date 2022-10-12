@@ -1,0 +1,59 @@
+<odoo>
+    <template id="tax_invoice_report_document" inherit_id="print_invoice_ksa.tax_invoice_report_document">
+        <xpath expr="//table[@id='lines']" position="before">
+            <t t-set="display_barcode" t-value="any(l.barcode for l in o.invoice_line_ids)"/>
+        </xpath>
+        <xpath expr="//table[@id='lines']/thead/tr/td[2]" position="before">
+            <t t-if="display_barcode">
+                <td width="5%" style="border:1pt solid grey;text-align:center;padding:2pt;">Item Code
+                    <span class="arabic">الكود</span>
+                </td>
+            </t>
+        </xpath>
+        <xpath expr="//table[@id='lines']/tbody/tr/t/td[2]" position="before">
+            <t t-if="display_barcode">
+                <td style="border:1pt solid grey;padding:3pt">
+                    <span t-field="l.barcode"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+    <template id="tax_project_invoice_document" inherit_id="print_invoice_ksa.tax_project_invoice_document">
+        <xpath expr="//table[@id='lines']" position="before">
+            <t t-set="display_barcode" t-value="any(l.barcode for l in o.invoice_line_ids)"/>
+        </xpath>
+        <xpath expr="//table[@id='lines']/thead/tr/td[2]" position="before">
+            <t t-if="display_barcode">
+                <td width="5%" style="border:1pt solid grey;text-align:center;padding:2pt;">Item Code
+                    <span class="arabic">الكود</span>
+                </td>
+            </t>
+        </xpath>
+        <xpath expr="//table[@id='lines']/tbody/tr/t/td[2]" position="before">
+            <t t-if="display_barcode">
+                <td style="border:1pt solid grey;padding:3pt">
+                    <span t-field="l.barcode"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+    <template id="tax_simplified_invoice_document" inherit_id="print_invoice_ksa.tax_simplified_invoice_document">
+        <xpath expr="//table[@id='lines']" position="before">
+            <t t-set="display_barcode" t-value="any(l.barcode for l in o.invoice_line_ids)"/>
+        </xpath>
+        <xpath expr="//table[@id='lines']/thead/tr/td[2]" position="before">
+            <t t-if="display_barcode">
+                <td width="5%" style="border:1pt solid grey;text-align:center;padding:2pt;">Item Code
+                    <span class="arabic">الكود</span>
+                </td>
+            </t>
+        </xpath>
+        <xpath expr="//table[@id='lines']/tbody/tr/t/td[2]" position="before">
+            <t t-if="display_barcode">
+                <td style="border:1pt solid grey;padding:3pt">
+                    <span t-field="l.barcode"/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+</odoo>

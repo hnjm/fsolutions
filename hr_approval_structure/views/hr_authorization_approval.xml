@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_authorization_approval_line_view_form"
+                model="ir.ui.view">
+            <field name="name">hr.authorization.approval.line.view.form</field>
+            <field name="model">hr.authorization.approval.line</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false" delete="false">
+                    <header>
+                        <field name="can_approve" invisible="1"/>
+                        <button name="action_approve" string="Approve"
+                                class="oe_highlight oe_inline"
+                                attrs="{'invisible': [('can_approve', '=', False)]}"
+                                type="object"/>
+                        <button name="action_reject" string="Reject"
+                                attrs="{'invisible': [('can_approve', '=', False)]}"
+                                class="oe_inline" type="object"/>
+                        <field name="status" widget="statusbar"
+                               class="oe_inline oe_right"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="user_id"/>
+                                <field name="approval_time"/>
+                                <field name="last_notification_date"/>
+                            </group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="required"/>
+                                <field name="create_date"/>
+                                <field name="write_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="eligible_user_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_authorization_approval_line_view_tree"
+                model="ir.ui.view">
+            <field name="name">hr.authorization.approval.line.view.tree</field>
+            <field name="model">hr.authorization.approval.line</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="name"/>
+                    <field name="sequence"/>
+                    <field name="required"/>
+                    <field name="user_id"/>
+                    <field name="approval_time"/>
+                    <field name="status"/>
+                    <field name="can_approve" invisible="1"/>
+                    <button name="action_approve" string="Approve"
+                            class="oe_highlight oe_inline"
+                            attrs="{'invisible': [('can_approve', '=', False)]}"
+                            type="object"/>
+                    <button name="action_reject" string="Reject"
+                            attrs="{'invisible': [('can_approve', '=', False)]}"
+                            class="oe_inline" type="object"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

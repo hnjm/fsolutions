@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_company_form_view_inherit_invoice_qr" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.invoice.qr</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website']" position="after">
+                <field name="bank_accounts"/>
+            </xpath>
+<!--            <xpath expr="//notebook/page[1]" position="inside">-->
+<!--                <group string="Default Terms and Conditions">-->
+<!--                    <group>-->
+<!--                        <field name="narration"/>-->
+<!--                    </group>-->
+<!--                </group>-->
+<!--            </xpath>-->
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="name" placeholder="الاسم العربي"/>
+                <field name="arabic_name" placeholder="English Name"/>
+            </xpath>
+            <xpath expr="//group[@name='social_media']" position="before">
+                <group>
+                    <label for="arabic_street" string="العنوان"/>
+                    <div class="o_address_format">
+                        <field name="arabic_street" placeholder="الشارع..." class="o_address_street"/>
+                        <field name="arabic_street2" placeholder="الشارع2..." class="o_address_street"/>
+                        <field name="arabic_city" placeholder="المدينة" class="o_address_city"/>
+                        <field name="arabic_state" class="o_address_state" placeholder="المنطقة"
+                               options="{&quot;no_open&quot;: True}"/>
+                        <field name="arabic_country" placeholder="الدولة" class="o_address_country"
+                               options="{&quot;no_open&quot;: True}"/>
+
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,296 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_discount_total
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-05 13:32+0000\n"
+"PO-Revision-Date: 2022-02-05 13:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.discount_purchase_order_form
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.discount_sale_view_form
+msgid "(update)"
+msgstr ""
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.res_config_settings_view_form_sale_discount
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__account_move__discount_type__amount
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__purchase_order__discount_type__amount
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__discount_type__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.discount_sale_view_form
+msgid "Approve"
+msgstr "تأكيد"
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__res_company__so_double_validation__one_step
+msgid "Confirm sale orders in one step"
+msgstr "تاكيد امر البيع في خطوة واحدة"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_bank_statement_line__amount_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_invoice_report__discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_move__amount_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_payment__amount_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_purchase_order__amount_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_order__amount_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_report__discount
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.report_invoice_customized
+msgid "Discount"
+msgstr "خصم"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_move_line__discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_purchase_order_line__discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_order_line__discount
+msgid "Discount (%)"
+msgstr "الخصم (%)"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_bank_statement_line__discount_rate
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_move__discount_rate
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_payment__discount_rate
+msgid "Discount Amount"
+msgstr "مبلغ الخصم"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_company__discount_product_id
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_config_settings__discount_product_id
+msgid "Discount Product"
+msgstr "منتج الخصم"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_purchase_order__discount_rate
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_order__discount_rate
+msgid "Discount Rate"
+msgstr "نسبة الخصم"
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.discount_account_invoice_view_form
+msgid "Discount Rate :"
+msgstr "نسبة الخصم :"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_bank_statement_line__discount_type
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_move__discount_type
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_payment__discount_type
+msgid "Discount Type"
+msgstr "نوع الخصم"
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.discount_account_invoice_view_form
+msgid "Discount Type :"
+msgstr "نوع الخصم :"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_config_settings__so_double_validation_limit
+msgid "Discount limit requires approval in %"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_purchase_order__discount_type
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_order__discount_type
+msgid "Discount type"
+msgstr "نوع الخصم"
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__res_company__so_double_validation__two_step
+msgid "Get 2 levels of approvals to confirm a sale order"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_account_invoice_report
+msgid "Invoices Statistics"
+msgstr "إحصائيات الفواتير"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_company__so_double_validation
+msgid "Levels of Approvals"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_config_settings__so_double_validation
+msgid "Levels of Approvals *"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__state__done
+msgid "Locked"
+msgstr "مقفل"
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.res_config_settings_view_form_sale_discount
+msgid "Managers must approve discount"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields,help:sale_discount_total.field_res_company__so_double_validation_limit
+#: model:ir.model.fields,help:sale_discount_total.field_res_config_settings__so_double_validation_limit
+msgid "Minimum discount percentage for which a double validation is required"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__account_move__discount_type__percent
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__purchase_order__discount_type__percent
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__discount_type__percent
+msgid "Percentage"
+msgstr "النسبة"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_company__so_double_validation_limit
+msgid "Percentage of Discount that requires double validation'"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model.fields,help:sale_discount_total.field_res_company__so_double_validation
+#: model:ir.model.fields,help:sale_discount_total.field_res_config_settings__so_double_validation
+msgid "Provide a double validation mechanism for sales discount"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "بند أمر الشراء"
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__state__draft
+msgid "Quotation"
+msgstr "عرض سعر"
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__state__sent
+msgid "Quotation Sent"
+msgstr "تم إرسال عرض السعر"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_res_config_settings__so_order_approval
+msgid "Sale Discount Approval"
+msgstr ""
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "تقرير المبيعات التحليلي"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_sale_order
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__state__sale
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: sale_discount_total
+#: model:ir.model,name:sale_discount_total.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_order__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.discount_sale_view_form
+msgid "Terms and conditions..."
+msgstr ""
+
+#. module: sale_discount_total
+#: model_terms:ir.ui.view,arch_db:sale_discount_total.report_saleorder_customized
+msgid "Total Discount"
+msgstr "اجمالي الخصم"
+
+#. module: sale_discount_total
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_bank_statement_line__amount_before_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_move__amount_before_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_account_payment__amount_before_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_purchase_order__amount_before_discount
+#: model:ir.model.fields,field_description:sale_discount_total.field_sale_order__amount_before_discount
+msgid "Total before discount"
+msgstr "الاجمالي قبل الخصم"
+
+#. module: sale_discount_total
+#: model:ir.model.fields.selection,name:sale_discount_total.selection__sale_order__state__waiting
+msgid "Waiting Approval"
+msgstr ""
+
+#. module: sale_discount_total
+#: code:addons/sale_discount_total/models/account_invoice.py:0
+#: code:addons/sale_discount_total/models/purchase_order.py:0
+#: code:addons/sale_discount_total/models/sale.py:0
+#, python-format
+msgid "You can't add Negative value !"
+msgstr "لا يسمح بقيمة سالبة"
+
+#. module: sale_discount_total
+#: code:addons/sale_discount_total/models/account_invoice.py:0
+#: code:addons/sale_discount_total/models/purchase_order.py:0
+#: code:addons/sale_discount_total/models/sale.py:0
+#, python-format
+msgid "You can't add Negative value in Discount!"
+msgstr "لا يسمح اضافة قيم سالبة"
+
+#. module: sale_discount_total
+#: code:addons/sale_discount_total/models/account_invoice.py:0
+#: code:addons/sale_discount_total/models/account_invoice.py:0
+#: code:addons/sale_discount_total/models/purchase_order.py:0
+#: code:addons/sale_discount_total/models/purchase_order.py:0
+#: code:addons/sale_discount_total/models/sale.py:0
+#: code:addons/sale_discount_total/models/sale.py:0
+#, python-format
+msgid "You can't add above 100 % value in Discount!"
+msgstr "لا يسمح بقية اكبر من 100 "
+
+#. module: sale_discount_total
+#: code:addons/sale_discount_total/models/account_invoice.py:0
+#: code:addons/sale_discount_total/models/purchase_order.py:0
+#: code:addons/sale_discount_total/models/sale.py:0
+#, python-format
+msgid "You can't add value above total!"
+msgstr "لا يسمح بقية اكبر من الاجمالي"

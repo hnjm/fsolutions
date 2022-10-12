@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="attachment_preview_button">
+        <button 
+            type="button" 
+            class="btn btn-link fa fa-eye o_attachment_preview" 
+            title="Attachemnt Preview" 
+            aria-label="Attachemnt Preview"/>
+    </t>
+
+</templates>
