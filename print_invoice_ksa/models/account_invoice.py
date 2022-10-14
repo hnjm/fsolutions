@@ -216,27 +216,6 @@ class QRCodeInvoice(models.Model):
     partner_balance = fields.Monetary(compute='_compute_partner_balance', store=False,
                                       readonly=True)
 
-
-    def action_reset_partner_multi(self):
-        context = dict(self._context or {})
-        active_ids = context.get('active_ids', []) or []
-        moves = self.env['account.move'].browse(active_ids)
-        for move in moves:
-            if move.move_type == 'entry':
-                partner_ids = move.line_ids.mapped('partner_id')
-                if partner_ids:
-                    move.partner_id = partner_ids[0].id
-
-
-    @api.onchange('line_ids.partner_id')
-    @api.constrains('line_ids')
-    def onchange_partner(self):
-        for rec in self:
-            if rec.move_type == 'entry':
-                partner_ids = rec.line_ids.mapped('partner_id')
-                if partner_ids:
-                    rec.partner_id = partner_ids[0].id
-
     @api.depends('restrict_mode_hash_table', 'state')
     def _compute_show_reset_to_draft_button(self):
         for move in self:

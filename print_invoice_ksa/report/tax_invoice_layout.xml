@@ -14,8 +14,8 @@
                     <div class="col-5">
                         <ul class="list-unstyled">
                             <strong>
-                                <li t-if="company.name" style="text-align:right;padding-right:3pt">
-                                    <span t-field="company.name"/>
+                                <li t-if="company.arabic_name" style="text-align:right;padding-right:3pt">
+                                    <span t-field="company.arabic_name"/>
                                 </li>
                             </strong>
                             <li t-if="company.arabic_street" style="text-align:right;padding-right:3pt">
@@ -44,8 +44,8 @@
                     <div class="col-5">
                         <ul class="list-unstyled">
                             <strong>
-                                <li t-if="company.arabic_name" style="text-align:left;padding-left:3pt">
-                                    <span t-field="company.arabic_name"/>
+                                <li t-if="company.name" style="text-align:left;padding-left:3pt">
+                                    <span t-field="company.name"/>
                                 </li>
                             </strong>
                             <li t-if="company.street" style="text-align:left;padding-left:3pt">
