@@ -177,6 +177,11 @@ class PosOrderLine(models.Model):
                 round=False,
             )
             line.is_total_cost_computed = True
+    
+    def _export_for_ui(self, orderline):
+        vals = super(PosOrderLine, self)._export_for_ui(orderline)
+        vals['wvproduct_id'] = [orderline.product_uom.id, orderline.product_uom.name]
+        return vals
 
 
 class StockPicking(models.Model):
