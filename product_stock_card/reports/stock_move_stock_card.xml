@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+
+        <record id="stock_move_stock_card_form" model="ir.ui.view">
+            <field name="name">stock_move_stock_card_form</field>
+            <field name="model">stock.move.stock.card</field>
+            <field name="arch" type="xml">
+                <form string="" create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="product_id"/>
+                                <field name="location_id"/>
+                                <field name="name"/>
+                                <field name="picking_id"/>
+                                <field name="partner_id"/>
+                            </group>
+                            <group>
+                                <field name="initial_stock"/>
+                                <field name="product_in"/>
+                                <field name="product_out"/>
+                                <field name="initial_stock"/>
+                                <field name="val_bal"/>
+                                <field name="product_bal"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="stock_move_stock_card_tree" model="ir.ui.view">
+            <field name="name">stock_move_stock_card_tree</field>
+            <field name="model">stock.move.stock.card</field>
+            <field name="arch" type="xml">
+                <tree string="" edit="false" create="false">
+                    <field name="date"/>
+                    <field name="product_id"/>
+                    <field name="location_id"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="initial_stock"/>
+                    <field name="product_in"/>
+                    <field name="product_out"/>
+                    <field name="val_bal"/>
+                    <field name="product_bal"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="stock_move_stock_card_search" model="ir.ui.view">
+           <field name="name">stock_move_stock_card_search</field>
+           <field name="model">stock.move.stock.card</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="product_id" string="Product"/>
+                    <field name="name" string="Move Name"/>
+                    <field name="partner_id" string="Partner"/>
+                    <filter string="IN" name="in" domain="[('transaction_type','=','in')]"/>
+                    <filter string="OUT" name="out" domain="[('transaction_type','=','out')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Product" name="product_id" domain="[]" context="{'group_by': 'product_id'}"/>
+                        <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                        <filter string="partner" name="partner_id" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    </group>
+            </search>
+           </field>
+        </record>
+
+        <record id="stock_move_stock_card_action" model="ir.actions.act_window">
+            <field name="name">Stock Card</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.move.stock.card</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="product_stock_card_data_menu" name="Stock Card Data" parent="stock.menu_warehouse_report" action="stock_move_stock_card_action" sequence="200"/>
+    </data>
+</odoo>

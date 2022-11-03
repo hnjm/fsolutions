@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wizard_stock_card_wizard,wizard_stock_card_wizard,model_wizard_stock_card_wizard,,1,1,1,1
+access_stock_move_stock_card,stock_move_stock_card,model_stock_move_stock_card,,1,1,1,1
