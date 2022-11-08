@@ -26,6 +26,7 @@
     'data': [
         'reports/inherit_external_layout_tax_invoice.xml',
         'reports/inherit_tax_invoice_report_document.xml',
+        'views/company.xml'
     ],
     'assets': {
         'web.report_assets_pdf': [ 
@@ -36,4 +37,5 @@
     'installable': True,
     'application': True,
     'license': "AGPL-3",
+    
 }

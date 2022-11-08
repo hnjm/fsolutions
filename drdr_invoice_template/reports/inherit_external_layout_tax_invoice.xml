@@ -15,13 +15,13 @@
                     <div>
                         <img t-att-src="'data:image/png;base64,%s' % to_text(o.qr_image)"  alt="Barcode" />
                     </div>
-                    <div>
-                        <img t-att-src="image_data_uri(company.logo)" class="float" t-options='{"widget": "image"}' />
+                    <div t-if="company.image">
+                        <img t-att-src="image_data_uri(company.image)" class="float" t-options='{"widget": "image"}' />
                     </div>
                 </div>
                 <div class="text-center" style="font-size:14px;">
                     <ul class="list-inline">
-                        <li t-if="company.phone" class="list-inline-item">
+                        <li  class="list-inline-item">
                             <i class="fa fa-phone" role="img" aria-label="Phone" title="Phone" />
                             <span t-field="company.phone" />
                         </li>
