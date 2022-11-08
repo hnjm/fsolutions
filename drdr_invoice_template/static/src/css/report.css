@@ -15,9 +15,17 @@ td{
     width: 100%;
 }
 .sig1{
-    margin-right:300px ;
+    margin-right:450px ;
 }
 .my-logo{
-    margin-left: 720px;
-    margin-top: 20px;
+    display: -webkit-box;
+    -webkit-box-direction: row;
+}
+.my-logo img{
+    width: 90px;
+    height: 90px;
+}
+.my-logo .float{
+    margin-left:625px;
+    margin-bottom: 10px;
 }

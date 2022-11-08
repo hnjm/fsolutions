@@ -64,25 +64,21 @@
             </table>
         </xpath>
 
-        <xpath expr="//t[@t-if='o.is_signature']" position="after">
-            <div>
-                <img class="my-logo" src="print_invoice_ksa/static/description/icon.png" width="90" height="90"/>
-            </div>
-        </xpath>
-
         <xpath expr="//t[@t-if='o.is_signature']" position="replace">
-                <div class='signature'>
+                <t t-if="o.is_signature" >
+                    <div class='signature'>
                         <div class='sig1' dir="rtl">
-                                <span t-field="o.invoice_user_id" />
-                                <span >  من اعداد</span>
-                                <span >Prepared By</span>
+                            <span >  من اعداد</span>
+                            <span >Prepared By</span>
                         </div>
                         <div class='sig2' dir="rtl">
-                                <span t-field="o.invoice_user_id"/>
+                                <span >   </span>
                                 <span >توقيع العميل</span>
                                 <span >Customer Signature </span>
                         </div>
-                </div>
+                    </div>
+                    <span style='margin-left:30px' t-field="o.invoice_user_id" />
+                </t>
         </xpath>
 
     </template>
