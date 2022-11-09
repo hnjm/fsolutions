@@ -22,15 +22,11 @@ td{
     -webkit-box-direction: row;
 }
 .my-logo img{
-    width: 140px;
-    height: 140px;
-}
-.my-logo .float{
-    margin-left:520px;
-    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
 }
 
-.col-2 center img {
-    width: 180px !important;
-    height:180px !important;
+.my-logo .float{
+    margin-left:500px;
+    padding-bottom: 10px;
 }
