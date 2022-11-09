@@ -1,0 +1,310 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* internal_transfer_user
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-15 21:58+0000\n"
+"PO-Revision-Date: 2022-10-16 00:05+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1.1\n"
+
+#. module: internal_transfer_user
+#: code:addons/internal_transfer_user/models/internal_transfer.py:0
+#: code:addons/m_hassan/internal_transfer_user/models/internal_transfer.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Transfers %s: You cannot validate these transfers if no quantities are reserved nor done. To force these transfers, switch in edit more and encode the done quantities."
+msgstr ""
+
+#. module: internal_transfer_user
+#: code:addons/internal_transfer_user/models/internal_transfer.py:0
+#: code:addons/m_hassan/internal_transfer_user/models/internal_transfer.py:0
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Transfers %s: You need to supply a Lot/Serial number for products %s."
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,help:internal_transfer_user.field_stock_picking__state
+msgid ""
+" * Draft: The transfer is not confirmed yet. Reservation doesn't apply.\n"
+" * Waiting another operation: This transfer is waiting for another operation before being ready.\n"
+" * Waiting: The transfer is waiting for the availability of some products.\n"
+"(a) The shipping policy is \"As soon as possible\": no product could be reserved.\n"
+"(b) The shipping policy is \"When all products are ready\": not all the products could be reserved.\n"
+" * Ready: The transfer is ready to be processed.\n"
+"(a) The shipping policy is \"As soon as possible\": at least one product has been reserved.\n"
+"(b) The shipping policy is \"When all products are ready\": all product have been reserved.\n"
+" * Done: The transfer has been processed.\n"
+" * Cancelled: The transfer has been cancelled."
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__tow_steps_validation
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking_type__tow_steps_validation
+msgid "2 Steps Validation"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_location__allowed_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__allowed_user
+msgid "Allowed Users"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.wiz_form_products_multi_view
+msgid "Cancel"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Contact:"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.wiz_form_products_multi_view
+msgid "Create Products"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__location_dest_id
+msgid "Destination Location"
+msgstr "الوجهة"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__done
+msgid "Done"
+msgstr "المنتهية"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "From"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__id
+msgid "ID"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_move__initial_demand_qty
+msgid "Initial Demand"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.actions.report,name:internal_transfer_user.internal_transfer_report
+msgid "Internal Transfer"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model,name:internal_transfer_user.model_stock_location
+msgid "Inventory Locations"
+msgstr "مواقع المخزون"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_location__is_lost
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking_type__is_lost
+msgid "Is Lost"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__op_id
+msgid "Op"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Phone:"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__pick
+msgid "Pick"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Picking Operation"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model,name:internal_transfer_user.model_stock_picking_type
+msgid "Picking Type"
+msgstr "نوع الاستلام"
+
+#. module: internal_transfer_user
+#: code:addons/internal_transfer_user/models/internal_transfer.py:0
+#: code:addons/m_hassan/internal_transfer_user/models/internal_transfer.py:0
+#, python-format
+msgid "Please add some items to move."
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_wiz_products__product_ids
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Product"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Product Barcode"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Quantity"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__assigned
+msgid "Ready"
+msgstr "جاهز"
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Scheduled Date:"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.stock_picking_inherit_internal
+msgid "Select Multiple Products"
+msgstr "اختيار منتجات متعددة"
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.stock_picking_inherit_internal
+msgid "Send"
+msgstr "ارسل"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__send
+msgid "Sent"
+msgstr "تم الإرسال"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__location_id
+msgid "Source Location"
+msgstr "مكان المورد"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "Status:"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model,name:internal_transfer_user.model_stock_move
+msgid "Stock Move"
+msgstr "حركة المخزون"
+
+#. module: internal_transfer_user
+#: code:addons/internal_transfer_user/models/internal_transfer.py:0
+#: code:addons/m_hassan/internal_transfer_user/models/internal_transfer.py:0
+#, python-format
+msgid "This user not allowed to complete the process to this destination location"
+msgstr "لا يُسمح لهذا المستخدم بإكمال العملية إلى موقع الوجهة هذا"
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "To"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields,field_description:internal_transfer_user.field_stock_picking__operation_type_to
+msgid "To Operation Type"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model,name:internal_transfer_user.model_stock_picking
+msgid "Transfer"
+msgstr "الشحنة"
+
+#. module: internal_transfer_user
+#: code:addons/internal_transfer_user/models/internal_transfer.py:0
+#: code:addons/m_hassan/internal_transfer_user/models/internal_transfer.py:0
+#, python-format
+msgid "Transfers %s: Please add some items to move."
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__confirmed
+msgid "Waiting"
+msgstr "في الانتظار"
+
+#. module: internal_transfer_user
+#: model:ir.model.fields.selection,name:internal_transfer_user.selection__stock_picking__state__waiting
+msgid "Waiting Another Operation"
+msgstr "في انتظار عمليه أخرى"
+
+#. module: internal_transfer_user
+#: code:addons/internal_transfer_user/models/internal_transfer.py:0
+#: code:addons/m_hassan/internal_transfer_user/models/internal_transfer.py:0
+#, python-format
+msgid "You need to supply a Lot/Serial number for products %s."
+msgstr ""
+
+#. module: internal_transfer_user
+#: model_terms:ir.ui.view,arch_db:internal_transfer_user.internal_transfer_report_temp
+msgid "lot"
+msgstr ""
+
+#. module: internal_transfer_user
+#: model:ir.model,name:internal_transfer_user.model_wiz_products
+msgid "wiz.products"
+msgstr ""

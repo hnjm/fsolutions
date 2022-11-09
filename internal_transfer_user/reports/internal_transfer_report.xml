@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="internal_transfer_report"
+                model="stock.picking"
+                string="Internal Transfer"
+                report_type="qweb-pdf"
+                name="internal_transfer_user.internal_transfer_report_temp"
+                file="internal_transfer_user.internal_transfer_report_temp"
+        />
+        <template id="internal_transfer_report_temp">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <style type="text/css">
+                                table.supplier {
+                                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                                border-collapse: collapse;
+                                width: 100%;
+                                text-align : center;
+                                margin :auto;
+                                }
+
+                                table.supplier td, table.supplier th {
+                                border: 1px solid #ddd;
+                                padding: 8px;
+                                }
+
+                                table.supplier tr:nth-child(even){background-color: #f2f2f2;}
+
+                                table.supplier tr:hover {background-color: #ddd;}
+
+                                table.supplier th {
+                                padding-top: 12px;
+                                padding-bottom: 12px;
+                                text-align: left;
+                                background-color: #990000 ;
+                                color: white;
+                                text-align : center;
+                                }
+                            </style>
+
+
+                            <div margin="0 auto" padding-top="0">
+                                <table width="100%" style="border: 1px solid #ddd; background-color: #EFECEB ;">
+                                    <tr>
+
+                                        <td width="30%" style="border: 1px solid #ddd;" align="center">
+                                            <h3>Picking Operation</h3>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                            <br/>
+                            <br/>
+                            <div align="left">
+                                <h3><field t-field="o.name"/></h3>
+                            </div>
+                            <div align="right" style="text-align:right">
+                                <table width="100%" class="supplier" >
+                                    <tr>
+                                         <td text-align="right">
+                                            <h4>Contact:</h4>
+                                        </td>
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.partner_id"/>
+                                            </h5>
+                                        </td>
+                                        <td text-align="right">
+                                            <h4>Phone:</h4>
+                                        </td>
+
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.partner_id.phone"/>
+                                            </h5>
+                                        </td>
+
+
+
+                                    </tr>
+                                    <tr>
+                                         <td text-align="right">
+                                            <h4>Scheduled Date:</h4>
+                                        </td>
+
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.scheduled_date"/>
+                                            </h5>
+                                        </td>
+
+                                        <td text-align="right">
+                                            <h4>Status:</h4>
+                                        </td>
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.state"/>
+                                            </h5>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <br/>  <br/>  <br/>
+
+<!--                            <div>-->
+<!--                                <div class="text-center" >-->
+<!--                                <table width="50%" class="supplier">-->
+<!--                                    <thead>-->
+<!--                                        <tr>-->
+<!--                                            <th>Product</th>-->
+<!--                                            <th>Quantity</th>-->
+<!--                                            <th>From</th>-->
+<!--                                            <th>To</th>-->
+<!--&lt;!&ndash;                                            <th>Demand</th>&ndash;&gt;-->
+<!--                                            <th>Product Barcode</th>-->
+<!--&lt;!&ndash;                                            <th>تاريخ الاستحقاق</th>&ndash;&gt;-->
+<!--                                        </tr>-->
+<!--                                    </thead>-->
+<!--                                    <tbody>-->
+<!--                                        <tr t-foreach='o.move_line_ids_without_package' t-as='line'>-->
+<!--                                            <td >-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.product_id.display_name"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--                                            <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.qty_done"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--                                            <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.location_id.display_name"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--                                            <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.location_dest_id.display_name"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--&lt;!&ndash;                                            <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <field t-field="line.product_uom_qty"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </td>&ndash;&gt;-->
+<!--                                            <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.product_id.barcode"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--&lt;!&ndash;                                             <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <field t-field="line.date_maturity"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </h6>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </td>&ndash;&gt;-->
+
+<!--                                        </tr>-->
+<!--                                    </tbody>-->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                            </div>-->
+                            <div>
+                                <div class="text-center" >
+                                <table width="50%" class="supplier">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>lot</th>
+                                            <th>Product Barcode</th>
+<!--                                            <th>تاريخ الاستحقاق</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach='o.move_line_ids_without_package' t-as='line'>
+                                            <td >
+                                                <h6>
+                                                    <field t-field="line.product_id.display_name"/>
+                                                </h6>
+                                            </td>
+                                            <td>
+                                                <h6>
+                                                    <field t-field="line.qty_done"/>
+                                                </h6>
+                                            </td>
+                                            <td>
+                                                <h6>
+                                                    <field t-field="line.location_id.display_name"/>
+                                                </h6>
+                                            </td>
+                                            <td>
+                                                <h6>
+                                                    <field t-field="line.location_dest_id.display_name"/>
+                                                </h6>
+                                            </td>
+<!--                                            <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.product_uom_qty"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+                                             <td>
+                                                <h6>
+                                                    <field t-field="line.lot_id"/>
+                                                </h6>
+                                            </td>
+                                            <td>
+                                                <h6>
+                                                    <field t-field="line.product_id.barcode"/>
+                                                </h6>
+                                            </td>
+<!--                                             <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="line.date_maturity"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+
+<!--                             <div>-->
+<!--                                <div class="text-center" >-->
+<!--                                <table width="50%" class="supplier">-->
+<!--                                    <thead>-->
+<!--                                        <tr>-->
+<!--                                            <th>اجمالي الدائن</th>-->
+<!--                                            <th>اجمالي المدين</th>-->
+<!--                                        </tr>-->
+<!--                                    </thead>-->
+<!--                                    <tbody>-->
+<!--                                        <tr>-->
+<!--                                            <td >-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="o.total_credit"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--                                            <td>-->
+<!--                                                <h6>-->
+<!--                                                    <field t-field="o.total_debit"/>-->
+<!--                                                </h6>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                    </tbody>-->
+<!--                                </table>-->
+<!--                            </div>-->
+                            </div>
+
+
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+
+
+

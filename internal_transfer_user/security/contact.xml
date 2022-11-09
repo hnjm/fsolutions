@@ -1,0 +1,20 @@
+<odoo>
+    <data >
+        <record id="module_liquidity_and_petty_cash" model="ir.module.category">
+            <field name="name">Liquidity and Petty Cash</field>
+        </record>
+        <record id="create_liquidity_and_petty_cash_group" model="res.groups">
+            <field name="name">Create Petty cash and Liquidity </field>
+            <field name="category_id" ref="module_liquidity_and_petty_cash"/>
+        </record>
+        <record id="confirm_liquidity_and_petty_cash_group" model="res.groups">
+            <field name="name">Confirm Petty cash and Liquidity </field>
+            <field name="category_id" ref="module_liquidity_and_petty_cash"/>
+        </record>
+
+        <record id="view_expense_petty_cash_group" model="res.groups">
+            <field name="name">View Expense Petty cash</field>
+            <field name="category_id" ref="module_liquidity_and_petty_cash"/>
+        </record>
+    </data>
+</odoo>
