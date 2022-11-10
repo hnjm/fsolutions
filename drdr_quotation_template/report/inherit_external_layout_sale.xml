@@ -10,7 +10,7 @@
             </li>
         </xpath>
         <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
-            <div t-attf-class="header cover-log o_company_#{company.id}_layout" t-att-style="report_header_style" dir="rtl">
+            <div t-attf-class="header cover-log o_company_#{company.id}_layout"  dir="rtl">
             </div> 
         </xpath>
     </template>

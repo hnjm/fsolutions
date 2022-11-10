@@ -23,3 +23,8 @@
     background-color: gray !important;
     color: #fff !important;
 }
+
+.gray thead td{
+    background-color: gray !important;
+}
+
