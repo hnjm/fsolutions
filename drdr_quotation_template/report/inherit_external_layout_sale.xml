@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="inherit_external_layout_sale" inherit_id="ps_quotation_template.external_layout_sale">
+        <xpath expr="//li[@t-if='company.company_registry']" position="replace">
+            <li t-if="company.company_registry" class="list-inline-item"
+                style="text-align:right;padding-right:3pt">
+                <span class="text-right">رقم السجل</span>
+                <span class="text-right">:</span>
+            </li>
+        </xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
+            <div t-attf-class="header cover-log o_company_#{company.id}_layout" t-att-style="report_header_style" dir="rtl">
+            </div> 
+        </xpath>
+    </template>
+    
+</odoo>
