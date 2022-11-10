@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="money_send_report"
+                model="account.payment"
+                string="ايصال صرف نقدية"
+                report_type="qweb-pdf"
+                name="accounting_updates.money_send_report_temp"
+                file="accounting_updates.money_send_report_temp"
+                menu="False"
+        />
+        <template id="money_send_report_temp">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style type="text/css">
+                                table.supplier {
+                                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                                border-collapse: collapse;
+                                width: 100%;
+                                text-align : center;
+                                margin :auto;
+
+                                }
+
+                                table.supplier td, table.supplier th {
+                                border: 1px solid #ddd;
+                                padding: 8px;
+                                text-align : center;
+
+                                }
+
+                                table.supplier tr:nth-child(even){background-color:
+                                #ffffff;}
+
+                                table.supplier tr:hover {background-color: #ddd;}
+
+                                table.supplier th {
+                                padding-top: 12px;
+                                padding-bottom: 12px;
+                                text-align: left;
+                                background-color: #FFFFFF;
+                                color: black;
+                                text-align : center;
+
+                                }
+                            </style>
+
+                            <div margin="0 auto" padding-top="0">
+                                <span width="30%" style="border: 1px solid #ddd;" align="center">
+                                    <h3>
+                                        <u>ايصال صرف نقدية/ شيكات</u>
+                                    </h3>
+                                </span>
+                            </div>
+                            <br/>
+                            <!--                            <div align="right" dir="rtl" style="text-align:right">-->
+                            <table width="100%" dir="rtl" class="supplier">
+                                <tr>
+                                    <th text-align="right">
+                                        <h4>مسلسل/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.name"/>
+                                        </h4>
+                                    </td>
+                                    <th text-align="right">
+                                        <h4>التاريخ/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.payment_date"/>
+                                        </h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th text-align="right">
+                                        <h4>مدفوع الي/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.partner_id"/>
+                                        </h4>
+                                    </td>
+                                    <th text-align="right">
+                                        <h4>مبلغ وقدره</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.amount"/>
+                                        </h4>
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <th text-align="right">
+                                        <h4>نقدا /بشيك رقم/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.check_number"/>
+                                        </h4>
+                                    </td>
+                                    <th text-align="right">
+                                        <h4>بتاريخ/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.with_date"/>
+                                        </h4>
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+
+                                    <th text-align="right">
+                                        <h4>بنك/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.bank"/>
+                                        </h4>
+                                    </td>
+                                    <th text-align="right">
+                                        <h4>فرع/</h4>
+                                    </th>
+                                    <td>
+                                        <h4>
+                                            <field t-field="o.branch"/>
+                                        </h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th text-align="right">
+                                        <h4>وذلك نظير/</h4>
+                                    </th>
+                                    <td colspan="3">
+                                        <h4>
+                                            <field t-field="o.reason"/>
+                                        </h4>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <!--                            </div>-->
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="text-center" dir="rtl">
+                                <table width="100%">
+
+                                    <tr>
+                                        <th>توقيع المستلم</th>
+                                        <th>الحسابات</th>
+                                        <th>المدير المالي</th>
+                                        <th>يعتمد.....</th>
+                                    </tr>
+
+
+                                </table>
+                                <br/>
+                                <br/>
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <h6>
+                                                --------------------------
+                                            </h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                --------------------------
+                                            </h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                --------------------------
+                                            </h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                --------------------------
+                                            </h6>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+
+
+

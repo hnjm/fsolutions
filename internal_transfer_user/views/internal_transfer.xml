@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="stock_picking_type_inherit">
+            <field name="name">stock_picking_type_inherit</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_picking_type_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='show_reserved']" position="after">
+                    <field name="tow_steps_validation"/>
+                    <field name="is_lost"/>
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="stock_location_users_inherit">
+            <field name="name">stock_location_users_inherit</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='next_inventory_date']" position="after">
+                    <field name="allowed_user" widget="many2many_tags"/>
+                    <field name="is_lost"/>
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="stock_picking_inherit_internal">
+            <field name="name">stock_picking_inherit_internal</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="user_id" invisible="0"/>
+                    <field name="allowed_user" invisible="0" widget="many2many_tags"/>
+                    <field name="tow_steps_validation" force_save="1"/>
+<!--                    <field name="steps_validation" force_save="1"/>-->
+
+                </xpath>
+                <xpath expr="//field[@name='picking_type_id']" position="after">
+                    <field name="operation_type_to" force_save="1"/>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="before">
+                    <button name="action_send" string="Send"  type="object" attrs="{'invisible':['|',('tow_steps_validation','=',False),('state','!=','assigned')]}" class="oe_highlight"
+                             />
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="replace">
+                    <button name="action_cancel" attrs="{'invisible': [('state', 'not in', ('send','assigned', 'confirmed', 'draft', 'waiting'))]}" string="Cancel" groups="base.group_user" type="object" data-hotkey="z"/>
+
+                </xpath>
+
+<!--                <xpath expr="//field[@name='picking_type_id']" position="replace">-->
+<!--                    <field name="picking_type_id"-->
+<!--                           attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', 'not in', ('draft','send'))]}"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='product_uom_qty']" position="replace">-->
+<!--                    <field name="product_uom_qty" string="Demand" attrs="{'readonly': ['|', ('is_initial_demand_editable', '=', False), '&amp;', '&amp;', ('show_operations', '=', True), ('is_locked', '=', True), ('is_initial_demand_editable', '=', False)]}"/>-->
+<!--                    <field name="initial_demand_qty"/>-->
+<!--                </xpath>-->
+                <xpath expr="//page[@name='detailed_operations']/field[@name='move_line_nosuggest_ids']" position="before">
+                    <button name="create_multi_products" string="Select Multiple Products"  type="object"  class="oe_highlight"/>
+
+                </xpath>
+                <xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('assigned','send','done'))]}</attribute>
+                </xpath>
+                 <xpath expr="//page[@name='detailed_operations']/field[@name='move_line_ids_without_package']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('assigned','send','done'))]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="wiz_form_products_multi_view" model="ir.ui.view">
+            <field name="name">wiz_form_products_multi_view</field>
+            <field name="model">wiz.products</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                       <group>
+                            <field name="product_ids"/>
+                       </group>
+
+                    </sheet>
+                    <footer>
+                        <button name="confirm" type="object" string="Create Products" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+
+                    </footer>
+
+
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

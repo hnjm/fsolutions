@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_stock_tag,user_stock_tag,account.model_account_account_tag,stock.group_stock_user,1,1,1,1
+admin_stock_tag,admin_stock_tag,account.model_account_account_tag,stock.group_stock_manager,1,1,1,1
+wiz_products_user,wiz_products_user,model_wiz_products,stock.group_stock_user,1,1,1,1
+wiz_products_admin,wiz_products_admin,model_wiz_products,stock.group_stock_manager,1,1,1,1
