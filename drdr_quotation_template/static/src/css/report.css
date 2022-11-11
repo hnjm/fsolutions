@@ -1,9 +1,7 @@
 .cover-log{
-    width:max-content;
-    height: 60px;
-    background-image: url('/drdr_quotation_template/static/src/description/cover.jpeg') !important;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: -webkit-box; /* wkhtmltopdf uses this one */
+    -webkit-box-direction: row; /* WebKit */
+    -webkit-box-pack: center;
 }
 
 .page div{

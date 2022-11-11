@@ -24,6 +24,7 @@
 
     # always loaded
     'data': [
+        'views/company.xml',
         'report/inherit_external_layout_sale.xml',
     ],
     'assets': {
