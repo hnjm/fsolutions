@@ -4,6 +4,10 @@
     -webkit-box-pack: center;
 }
 
+.cover-log img{
+    width: max-content;
+    height: 70px;
+}
 .page div{
     border:0px !important;
 }
@@ -11,6 +15,7 @@
 .page h3 {
     background-color: gray !important;
     color: white !important;
+    
 }
 
 #totals tr{

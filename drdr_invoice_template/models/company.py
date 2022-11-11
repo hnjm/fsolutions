@@ -4,7 +4,7 @@ class Company(models.Model):
     _inherit = 'res.company'
 
 
-    image = fields.Binary(string='Image')
+    image = fields.Binary(string='Invoice Image')
     
     
         

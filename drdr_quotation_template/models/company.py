@@ -4,7 +4,7 @@ class Company(models.Model):
     _inherit = 'res.company'
 
 
-    logo_quotation = fields.Binary(string='Image')
+    logo_quotation = fields.Binary(string='Quotation Image')
     
     
         
